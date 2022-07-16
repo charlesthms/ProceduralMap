@@ -30,6 +30,8 @@ public class SimplexNoiseGenerator implements WorldGenerator {
         Random r = new Random();
         Noise.setSeed(r.nextInt(Integer.MAX_VALUE));
 
+        System.out.println("[SEED] " + Noise.seed);
+
         // Summing up all octaves, the whole expression makes up a weighted average
         // computation where the noise with the lowest frequencies have the least effect
 

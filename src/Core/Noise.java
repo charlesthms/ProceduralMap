@@ -2,6 +2,7 @@ package Core;
 
 import java.util.Random;
 
+
 public class Noise {
     public static long seed;
     private static Grad grad3[] = {new Grad(1,1,0),new Grad(-1,1,0),new Grad(1,-1,0),new Grad(-1,-1,0),

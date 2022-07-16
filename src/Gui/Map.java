@@ -3,6 +3,13 @@ package Gui;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * A procedural map generator
+ *
+ * @author Charles Thomas
+ * @project Procedural Generator
+ */
+
 public class Map extends JPanel {
 
     double[][] array;
@@ -13,6 +20,7 @@ public class Map extends JPanel {
     }
 
     public void paint(Graphics g) {
+        super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
 
         for (int x=0; x<this.array.length; x++){
@@ -22,8 +30,18 @@ public class Map extends JPanel {
                 g2d.fillRect(x, y, Window.TILE_SIZE, Window.TILE_SIZE);
             }
         }
+
+        g2d.setColor(new Color(0, 0, 0, 119));
+        g2d.fillRoundRect(10, Window.HEIGHT - 75, 100, 40, 10, 10);
     }
 
+    /**
+     * Determine color based on noise value
+     *
+     * @param x coordinate
+     * @param y coordinate
+     * @return
+     */
     private Color getColour(int x, int y) {
 
         if(array[x][y] < 0) {
@@ -41,5 +59,4 @@ public class Map extends JPanel {
         }
 
     }
-
 }

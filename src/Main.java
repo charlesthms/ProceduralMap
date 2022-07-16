@@ -1,7 +1,13 @@
 import Core.SimplexNoiseGenerator;
-import Core.World;
 import Core.Interface.WorldGenerator;
 import Gui.Window;
+
+/**
+ * A procedural map generator
+ *
+ * @author Charles Thomas
+ * @project Procedural Generator
+ */
 
 public class Main {
 
@@ -11,7 +17,6 @@ public class Main {
 
         double[][] array = worldGen.createWorld(Window.WIDTH, Window.HEIGHT);
         gui.visualize(array);
-
     }
 
 }
